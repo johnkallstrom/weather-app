@@ -17,6 +17,19 @@ body {
 
 #app {
   margin: 0 auto;
-  width: 50%;
+  width: 60%;
   overflow: hidden;
+}
+
+#header h1 {
+  padding: 2rem;
+  text-align: center;
+  color: var(--havelock-blue);
+}
+
+#container {
+  margin-top: 5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding-bottom: 3rem;
 }

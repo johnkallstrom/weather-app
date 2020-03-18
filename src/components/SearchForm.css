@@ -1,0 +1,35 @@
+:root {
+  --havelock-blue: #13a8ff;
+  --alabaster: #fbfbfb;
+  --hover-color: #0b74b1;
+}
+
+#form {
+  text-align: center;
+}
+
+#input {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 17px;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 65%;
+}
+
+#button {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 17px;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+  width: 15%;
+  background-color: var(--havelock-blue);
+  color: var(--alabaster);
+}
+
+#button:hover {
+  background-color: var(--hover-color);
+  cursor: pointer;
+}

@@ -1,0 +1,33 @@
+:root {
+  --havelock-blue: #13a8ff;
+  --alabaster: #fbfbfb;
+  --hover-color: #0b74b1;
+}
+
+#wrapper {
+  margin-top: 1rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#details {
+  margin-top: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 65%;
+  padding: 2rem;
+  color: var(--havelock-blue);
+}
+
+#details h1 {
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+}
+
+#details h2 {
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 40px;
+  margin-bottom: 0.5rem;
+}
