@@ -41,7 +41,22 @@ function WeatherDetails({ data }) {
         </h1>
         <p>{formatDate()}</p>
         <p>{data.description}</p>
-        <h2>{data.temp}&deg;</h2>
+      </div>
+      <div id='image'>
+        <div className='temp'>
+          <h1>{Math.round(data.temp)}&deg;</h1>
+        </div>
+        <div className='img'>
+          <img
+            src={`http://openweathermap.org/img/wn/${data.icon}@2x.png`}
+            alt='weather-img'
+          />
+        </div>
+      </div>
+      <div id='weather'>
+        <p>Humidity: {data.humidity}%</p>
+        <p>Wind: {data.speed} m/s</p>
+        <p>Cloudiness: {data.all}%</p>
       </div>
     </div>
   );

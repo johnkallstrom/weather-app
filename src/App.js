@@ -20,8 +20,10 @@ function App() {
         const { name } = data;
         const { lon, lat } = data.coord;
         const { country } = data.sys;
-        const { temp, temp_min, temp_max } = data.main;
+        const { temp, temp_min, temp_max, humidity } = data.main;
         const [{ description, icon }] = data.weather;
+        const { speed } = data.wind;
+        const { all } = data.clouds;
 
         setData({
           name,
@@ -30,9 +32,12 @@ function App() {
           icon,
           lon,
           lat,
+          speed,
+          all,
           temp,
           temp_min,
-          temp_max
+          temp_max,
+          humidity
         });
         setIsLoading(false);
       })
@@ -55,20 +60,20 @@ function App() {
         <Search handleSearch={handleSearch} />
         {isError ? (
           <div id='error'>
-            <p>Oops, something went wrong...</p>
+            <p>Oops, we could not find that location...</p>
           </div>
         ) : (
-          <div>
+          <React.Fragment>
             {isLoading ? (
               <div id='loading'>
                 <p>Loading...</p>
               </div>
             ) : (
-              <div>
+              <React.Fragment>
                 <WeatherDetails data={data} />
-              </div>
+              </React.Fragment>
             )}
-          </div>
+          </React.Fragment>
         )}
       </div>
     </div>
