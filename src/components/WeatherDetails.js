@@ -15,13 +15,12 @@ function WeatherDetails({ data }) {
   return (
     <div id='wrapper'>
       <div id='details'>
-        <div className='information'>
+        <div className='section-one'>
           <h2>
             {data.name}, {data.country}
           </h2>
           <p>{convertTimestamp(data.dt)}</p>
           <p>{data.description}</p>
-          <p className='temp'>{Math.round(data.temp)} &deg;C</p>
           <ul>
             <li>Wind: {data.speed} m/s</li>
             <li>Humidity: {data.humidity}%</li>
@@ -30,7 +29,8 @@ function WeatherDetails({ data }) {
             </li>
           </ul>
         </div>
-        <div className='image'>
+        <div className='section-two'>
+          <p className='temp'>{Math.round(data.temp)} &deg;C</p>
           <img
             src={`http://openweathermap.org/img/wn/${data.icon}@2x.png`}
             alt='weather'

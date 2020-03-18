@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Search from './components/Search';
 import WeatherDetails from './components/WeatherDetails';
 import Header from './components/Header';
+import LoadingSpinner from './components/LoadingSpinner';
 
 const url = `${process.env.REACT_APP_BASE_URL}?appid=${process.env.REACT_APP_API_KEY}&units=metric&q=`;
 
@@ -14,38 +15,40 @@ function App() {
   useEffect(() => {
     setIsError(false);
     setIsLoading(true);
-    fetch(`${url}${query}`)
-      .then(res => res.json())
-      .then(data => {
-        const { name, dt } = data;
-        const { lon, lat } = data.coord;
-        const { country } = data.sys;
-        const { temp, temp_min, temp_max, humidity } = data.main;
-        const [{ description, icon }] = data.weather;
-        const { speed } = data.wind;
-        const { all } = data.clouds;
+    setTimeout(() => {
+      fetch(`${url}${query}`)
+        .then(res => res.json())
+        .then(data => {
+          const { name, dt } = data;
+          const { lon, lat } = data.coord;
+          const { country } = data.sys;
+          const { temp, temp_min, temp_max, humidity } = data.main;
+          const [{ description, icon }] = data.weather;
+          const { speed } = data.wind;
+          const { all } = data.clouds;
 
-        setData({
-          name,
-          country,
-          dt,
-          description,
-          icon,
-          lon,
-          lat,
-          speed,
-          all,
-          temp,
-          temp_min,
-          temp_max,
-          humidity
+          setData({
+            name,
+            country,
+            dt,
+            description,
+            icon,
+            lon,
+            lat,
+            speed,
+            all,
+            temp,
+            temp_min,
+            temp_max,
+            humidity
+          });
+          setIsLoading(false);
+        })
+        .catch(err => {
+          setIsError(true);
+          console.log(err);
         });
-        setIsLoading(false);
-      })
-      .catch(err => {
-        setIsError(true);
-        console.log(err);
-      });
+    }, 1000);
   }, [query]);
 
   const handleSearch = value => {
@@ -67,7 +70,7 @@ function App() {
           <React.Fragment>
             {isLoading ? (
               <div id='loading'>
-                <p>Loading...</p>
+                <LoadingSpinner />
               </div>
             ) : (
               <React.Fragment>

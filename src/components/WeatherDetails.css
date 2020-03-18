@@ -15,7 +15,7 @@
   width: 60%;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 2rem 2rem 2rem 2rem;
   color: var(--havelock-blue);
 }
 
@@ -25,18 +25,23 @@
 }
 
 #details ul {
+  margin-top: 2rem;
   list-style: none;
 }
 
 #details .temp {
   font-size: 36px;
-  margin: 1.5rem 0 1.5rem 0;
+  margin: 1.5rem 0 0 0;
+}
+
+.section-two {
+  text-align: center;
 }
 
 @media (max-width: 992px) {
   #details {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr 1fr;
     width: 70%;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -48,7 +53,7 @@
 @media (max-width: 720px) {
   #details {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 8px;
