@@ -17,7 +17,7 @@ function App() {
     fetch(`${url}${query}`)
       .then(res => res.json())
       .then(data => {
-        const { name } = data;
+        const { name, dt } = data;
         const { lon, lat } = data.coord;
         const { country } = data.sys;
         const { temp, temp_min, temp_max, humidity } = data.main;
@@ -28,6 +28,7 @@ function App() {
         setData({
           name,
           country,
+          dt,
           description,
           icon,
           lon,
