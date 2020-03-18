@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import './SearchForm.css';
+import './Search.css';
 
-function SearchForm({ searchWeatherByLocation }) {
-  const [searchValue, setSearchValue] = useState('');
+function Search({ handleSearch }) {
+  const [value, setValue] = useState('');
 
   const handleChange = e => {
-    setSearchValue(e.target.value);
+    setValue(e.target.value);
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    searchWeatherByLocation(searchValue);
-    setSearchValue('');
+    handleSearch(value);
+    setValue('');
   };
 
   return (
@@ -23,7 +23,7 @@ function SearchForm({ searchWeatherByLocation }) {
         placeholder='Enter location...'
         onFocus={e => (e.target.placeholder = '')}
         onBlur={e => (e.target.placeholder = 'Enter location...')}
-        value={searchValue}
+        value={value}
         onChange={handleChange}
       />
       <button id='button'>Search</button>
@@ -31,4 +31,4 @@ function SearchForm({ searchWeatherByLocation }) {
   );
 }
 
-export default SearchForm;
+export default Search;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './WeatherDetails.css';
 
-function WeatherDetails({ weatherData }) {
+function WeatherDetails({ data }) {
   const formatDate = () => {
     const now = new Date();
     const date = now.getDate();
@@ -37,11 +37,11 @@ function WeatherDetails({ weatherData }) {
     <div id='wrapper'>
       <div id='details'>
         <h1>
-          {weatherData.name}, {weatherData.country}
+          {data.name}, {data.country}
         </h1>
         <p>{formatDate()}</p>
-        <p>{weatherData.description}</p>
-        <h2>{weatherData.temp}&deg;</h2>
+        <p>{data.description}</p>
+        <h2>{data.temp}&deg;</h2>
       </div>
     </div>
   );

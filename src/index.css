@@ -1,6 +1,7 @@
 :root {
   --havelock-blue: #13a8ff;
   --alabaster: #fbfbfb;
+  --crimson: #dd2742;
 }
 
 * {
@@ -32,4 +33,18 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding-bottom: 3rem;
+}
+
+#loading {
+  margin-top: 3rem;
+  color: var(--havelock-blue);
+  font-size: 24px;
+  text-align: center;
+}
+
+#error {
+  margin-top: 2rem;
+  color: var(--crimson);
+  font-size: 24px;
+  text-align: center;
 }
