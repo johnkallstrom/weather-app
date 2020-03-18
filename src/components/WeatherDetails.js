@@ -2,6 +2,16 @@ import React from 'react';
 import './WeatherDetails.css';
 
 function WeatherDetails({ data }) {
+  const convertTimestamp = timestamp => {
+    var date = new Date(timestamp * 1000);
+    var hours = date.getHours();
+    var minutes = '0' + date.getMinutes();
+    var seconds = '0' + date.getSeconds();
+    var formattedTime =
+      hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    return formattedTime;
+  };
+
   return (
     <div id='wrapper'>
       <div id='details'>
@@ -9,6 +19,7 @@ function WeatherDetails({ data }) {
           <h2>
             {data.name}, {data.country}
           </h2>
+          <p>{convertTimestamp(data.dt)}</p>
           <p>{data.description}</p>
           <p className='temp'>{Math.round(data.temp)} &deg;C</p>
           <ul>
