@@ -34,12 +34,12 @@ function App() {
           temp_min,
           temp_max
         });
+        setIsLoading(false);
       })
       .catch(err => {
         setIsError(true);
         console.log(err);
       });
-    setIsLoading(false);
   }, [query]);
 
   const handleSearch = value => {
