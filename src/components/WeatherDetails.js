@@ -2,9 +2,19 @@ import React from 'react';
 import './WeatherDetails.css';
 
 function WeatherDetails({ data }) {
-  const getDate = () => {
-    var today = new Date();
-    return today.toLocaleDateString('en-US', { weekday: 'long' });
+  const today = new Date();
+
+  const getDay = () => {
+    const day = today.toLocaleDateString('en-GB', { weekday: 'long' });
+    return day;
+  };
+
+  const getTime = () => {
+    const time = today.toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+    return time;
   };
 
   const capitalizeDescription = string => {
@@ -21,7 +31,9 @@ function WeatherDetails({ data }) {
           <h2>
             {data.name}, {data.country}
           </h2>
-          <p>{getDate()}</p>
+          <p>
+            {getDay()}, {getTime()}
+          </p>
           <p>{capitalizeDescription(data.description)}</p>
           <p></p>
           <ul>
