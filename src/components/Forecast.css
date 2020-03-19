@@ -1,0 +1,37 @@
+:root {
+  --havelock-blue: #13a8ff;
+  --alabaster: #fbfbfb;
+  --hover-color: #0b74b1;
+}
+
+#forecast-container {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 2rem;
+}
+
+#card-wrapper {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  color: var(--havelock-blue);
+}
+
+#card-wrapper span {
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 720px) {
+  #forecast-container {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 2rem;
+  }
+}

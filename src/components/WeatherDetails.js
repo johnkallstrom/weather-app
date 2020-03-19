@@ -1,7 +1,7 @@
 import React from 'react';
 import './WeatherDetails.css';
 
-function WeatherDetails({ data }) {
+function WeatherDetails({ weatherData }) {
   const today = new Date();
 
   const getDay = () => {
@@ -29,25 +29,25 @@ function WeatherDetails({ data }) {
       <div id='details'>
         <div className='section-one'>
           <h2>
-            {data.name}, {data.country}
+            {weatherData.name}, {weatherData.country}
           </h2>
           <p>
             {getDay()}, {getTime()}
           </p>
-          <p>{capitalizeDescription(data.description)}</p>
+          <p>{capitalizeDescription(weatherData.description)}</p>
           <p></p>
           <ul>
-            <li>Wind: {data.speed} m/s</li>
-            <li>Humidity: {data.humidity}%</li>
+            <li>Wind: {weatherData.speed} m/s</li>
+            <li>Humidity: {weatherData.humidity}%</li>
             <li>
-              Coords: [{data.lat}, {data.lon}]
+              Coords: [{weatherData.lat}, {weatherData.lon}]
             </li>
           </ul>
         </div>
         <div className='section-two'>
-          <p className='temp'>{Math.round(data.temp)} &deg;C</p>
+          <p className='temp'>{Math.round(weatherData.temp)} &deg;C</p>
           <img
-            src={`http://openweathermap.org/img/wn/${data.icon}@2x.png`}
+            src={`http://openweathermap.org/img/wn/${weatherData.icon}@2x.png`}
             alt='weather'
             id='img'
           />

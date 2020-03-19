@@ -3,12 +3,12 @@ import Search from './components/Search';
 import WeatherDetails from './components/WeatherDetails';
 import Header from './components/Header';
 import LoadingSpinner from './components/LoadingSpinner';
-import WeatherCard from './components/WeatherCard';
+import Forecast from './components/Forecast';
 
 const url = `${process.env.REACT_APP_BASE_URL}?appid=${process.env.REACT_APP_API_KEY}&units=metric&q=`;
 
 function App() {
-  const [data, setData] = useState({});
+  const [weatherData, setWeatherData] = useState({});
   const [query, setQuery] = useState('stockholm');
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -28,7 +28,7 @@ function App() {
           const { speed } = data.wind;
           const { all } = data.clouds;
 
-          setData({
+          setWeatherData({
             name,
             country,
             dt,
@@ -75,7 +75,8 @@ function App() {
               </div>
             ) : (
               <>
-                <WeatherDetails data={data} />
+                <WeatherDetails weatherData={weatherData} />
+                <Forecast />
               </>
             )}
           </>

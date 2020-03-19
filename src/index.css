@@ -49,9 +49,14 @@ body {
 }
 
 #error {
+  width: 80%;
+  margin: 0 auto;
   margin-top: 2rem;
   color: var(--crimson);
   font-size: 22px;
+}
+
+#error p {
   text-align: center;
 }
 
