@@ -3,6 +3,7 @@ import Search from './components/Search';
 import WeatherDetails from './components/WeatherDetails';
 import Header from './components/Header';
 import LoadingSpinner from './components/LoadingSpinner';
+import WeatherCard from './components/WeatherCard';
 
 const url = `${process.env.REACT_APP_BASE_URL}?appid=${process.env.REACT_APP_API_KEY}&units=metric&q=`;
 
@@ -67,17 +68,17 @@ function App() {
             <p>Oops, we could not find that location...</p>
           </div>
         ) : (
-          <React.Fragment>
+          <>
             {isLoading ? (
               <div id='loading'>
                 <LoadingSpinner />
               </div>
             ) : (
-              <React.Fragment>
+              <>
                 <WeatherDetails data={data} />
-              </React.Fragment>
+              </>
             )}
-          </React.Fragment>
+          </>
         )}
       </div>
     </div>
