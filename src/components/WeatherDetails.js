@@ -7,6 +7,13 @@ function WeatherDetails({ data }) {
     return today.toLocaleDateString('en-US', { weekday: 'long' });
   };
 
+  const capitalizeDescription = string => {
+    if (string !== undefined) {
+      const newString = string.charAt(0).toUpperCase() + string.slice(1);
+      return newString;
+    }
+  };
+
   return (
     <div id='wrapper'>
       <div id='details'>
@@ -15,7 +22,7 @@ function WeatherDetails({ data }) {
             {data.name}, {data.country}
           </h2>
           <p>{getDate()}</p>
-          <p>{data.description}</p>
+          <p>{capitalizeDescription(data.description)}</p>
           <p></p>
           <ul>
             <li>Wind: {data.speed} m/s</li>
