@@ -4,6 +4,7 @@ import WeatherDetails from './components/WeatherDetails';
 import Header from './components/Header';
 import LoadingSpinner from './components/LoadingSpinner';
 import Forecast from './components/Forecast';
+import Error from './components/Error';
 
 const url = `${process.env.REACT_APP_BASE_URL}?appid=${process.env.REACT_APP_API_KEY}&units=metric&q=`;
 
@@ -65,7 +66,7 @@ function App() {
         <Search handleSearch={handleSearch} />
         {isError ? (
           <div id='error'>
-            <p>Oops, we could not find that location...</p>
+            <Error />
           </div>
         ) : (
           <>

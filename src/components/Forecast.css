@@ -26,6 +26,10 @@
   margin-left: 0.5rem;
 }
 
+#forecast-img {
+  width: 60px;
+}
+
 @media (max-width: 720px) {
   #forecast-container {
     width: 80%;
