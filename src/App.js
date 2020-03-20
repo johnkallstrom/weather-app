@@ -56,7 +56,9 @@ function App() {
 
     fetch(`${url}${query}`)
       .then(res => res.json())
-      .then(data => setForecastData(data.list))
+      .then(data => {
+        setForecastData(data.list);
+      })
       .catch(err => console.log(err));
   }, [query]);
 

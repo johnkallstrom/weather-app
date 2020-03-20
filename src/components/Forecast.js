@@ -3,7 +3,12 @@ import ForecastCard from './ForecastCard';
 import './Forecast.css';
 
 function Forecast({ forecastData }) {
-  const forecastList = forecastData.map(forecast => {
+  const result = [];
+  for (let i = 7; i < forecastData.length; i += 8) {
+    result.push(forecastData[i]);
+  }
+
+  const forecastList = result.map(forecast => {
     const { dt_txt } = forecast;
     const { temp_max, temp_min } = forecast.main;
     const [{ icon }] = forecast.weather;

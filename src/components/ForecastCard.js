@@ -3,7 +3,7 @@ import React from 'react';
 function ForecastCard({ date, maxtemp, mintemp, icon }) {
   return (
     <div id='card-wrapper'>
-      <p>{date}</p>
+      <p>{new Date(date).toLocaleDateString('en-GB', { weekday: 'short' })}</p>
       <img
         src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
         alt='forecast'
