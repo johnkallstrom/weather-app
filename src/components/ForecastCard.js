@@ -1,16 +1,16 @@
 import React from 'react';
 
-function ForecastCard() {
+function ForecastCard({ date, maxtemp, mintemp, icon }) {
   return (
     <div id='card-wrapper'>
-      <p>Fri</p>
+      <p>{date}</p>
       <img
-        src={`http://openweathermap.org/img/wn/10d@2x.png`}
+        src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
         alt='forecast'
         id='forecast-img'
       />
       <p>
-        7 &deg;<span>2 &deg;</span>
+        {Math.round(maxtemp)} &deg;<span>{Math.round(mintemp)} &deg;</span>
       </p>
     </div>
   );

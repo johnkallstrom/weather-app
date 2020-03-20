@@ -6,39 +6,37 @@ import LoadingSpinner from './components/LoadingSpinner';
 import Forecast from './components/Forecast';
 import Error from './components/Error';
 
-const url = `${process.env.REACT_APP_BASE_URL}?appid=${process.env.REACT_APP_API_KEY}&units=metric&q=`;
-
 function App() {
   const [weatherData, setWeatherData] = useState({});
+  const [forecastData, setForecastData] = useState([]);
   const [query, setQuery] = useState('stockholm');
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
+    const url = `http://api.openweathermap.org/data/2.5/weather?appid=${process.env.REACT_APP_API_KEY}&units=metric&q=`;
+
     setIsError(false);
     setIsLoading(true);
     setTimeout(() => {
       fetch(`${url}${query}`)
         .then(res => res.json())
         .then(data => {
-          const { name, dt } = data;
+          const { name } = data;
           const { lon, lat } = data.coord;
           const { country } = data.sys;
           const { temp, temp_min, temp_max, humidity } = data.main;
           const [{ description, icon }] = data.weather;
           const { speed } = data.wind;
-          const { all } = data.clouds;
 
           setWeatherData({
             name,
             country,
-            dt,
             description,
             icon,
             lon,
             lat,
             speed,
-            all,
             temp,
             temp_min,
             temp_max,
@@ -51,6 +49,15 @@ function App() {
           console.log(err);
         });
     }, 1000);
+  }, [query]);
+
+  useEffect(() => {
+    const url = `http://api.openweathermap.org/data/2.5/forecast?appid=${process.env.REACT_APP_API_KEY}&units=metric&q=`;
+
+    fetch(`${url}${query}`)
+      .then(res => res.json())
+      .then(data => setForecastData(data.list))
+      .catch(err => console.log(err));
   }, [query]);
 
   const handleSearch = value => {
@@ -77,7 +84,7 @@ function App() {
             ) : (
               <>
                 <WeatherDetails weatherData={weatherData} />
-                <Forecast />
+                <Forecast forecastData={forecastData} />
               </>
             )}
           </>
