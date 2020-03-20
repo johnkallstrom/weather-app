@@ -25,8 +25,8 @@ function WeatherDetails({ weatherData }) {
   };
 
   return (
-    <div id='wrapper'>
-      <div id='details'>
+    <div id='details-container'>
+      <div className='details-wrapper'>
         <div className='section-one'>
           <h2>
             {weatherData.name}, {weatherData.country}
@@ -43,6 +43,9 @@ function WeatherDetails({ weatherData }) {
               Coords: [{weatherData.lat}, {weatherData.lon}]
             </li>
           </ul>
+          <button className='add-button'>
+            <i className='fas fa-heart'></i>
+          </button>
         </div>
         <div className='section-two'>
           <p className='temp'>{Math.round(weatherData.temp)} &deg;C</p>

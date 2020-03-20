@@ -26,7 +26,9 @@ function Search({ handleSearch }) {
         value={value}
         onChange={handleChange}
       />
-      <button id='button'>Search</button>
+      <button id='button'>
+        <i className='fas fa-search'></i>
+      </button>
     </form>
   );
 }

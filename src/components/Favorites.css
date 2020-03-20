@@ -1,0 +1,41 @@
+:root {
+  --havelock-blue: #13a8ff;
+  --alabaster: #fbfbfb;
+  --hover-color: #0b74b1;
+}
+
+#favorites-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.favorites-wrapper {
+  border-radius: 8px;
+  margin-top: 2rem;
+  width: 50%;
+  color: var(--havelock-blue);
+}
+.favorites-wrapper ul {
+  list-style: none;
+}
+
+.favorites-wrapper h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.shell {
+  background-color: var(--havelock-blue);
+  color: var(--alabaster);
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  width: 50%;
+}
+
+.shell:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+}

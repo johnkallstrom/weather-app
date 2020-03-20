@@ -5,8 +5,10 @@ import Header from './components/Header';
 import LoadingSpinner from './components/LoadingSpinner';
 import Forecast from './components/Forecast';
 import Error from './components/Error';
+import Favorites from './components/Favorites';
 
 function App() {
+  const [storedLocations, setStoredLocations] = useState([]);
   const [weatherData, setWeatherData] = useState({});
   const [forecastData, setForecastData] = useState([]);
   const [query, setQuery] = useState('stockholm');
@@ -86,6 +88,7 @@ function App() {
             ) : (
               <>
                 <WeatherDetails weatherData={weatherData} />
+                <Favorites />
                 <Forecast forecastData={forecastData} />
               </>
             )}
