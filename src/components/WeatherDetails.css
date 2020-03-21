@@ -41,10 +41,10 @@
 .add-button {
   font-family: 'Ubuntu', sans-serif;
   font-size: 17px;
-  padding: 0.6rem;
+  padding: 0.7rem;
   border: none;
   border-radius: 5px;
-  width: 50%;
+  width: 60%;
   background-color: var(--havelock-blue);
   color: var(--alabaster);
   margin-top: 1.5rem;

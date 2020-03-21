@@ -75,6 +75,7 @@ function App() {
       <div id='container'>
         <Header />
         <Search handleSearch={handleSearch} />
+        <Favorites />
         {isError ? (
           <div id='error'>
             <Error />
@@ -88,7 +89,6 @@ function App() {
             ) : (
               <>
                 <WeatherDetails weatherData={weatherData} />
-                <Favorites />
                 <Forecast forecastData={forecastData} />
               </>
             )}

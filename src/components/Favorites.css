@@ -10,29 +10,22 @@
 }
 
 .favorites-wrapper {
-  border-radius: 8px;
-  margin-top: 2rem;
-  width: 50%;
+  width: 100%;
   color: var(--havelock-blue);
+  margin-bottom: 1.5rem;
 }
 .favorites-wrapper ul {
   list-style: none;
 }
 
-.favorites-wrapper h2 {
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
 .shell {
   background-color: var(--havelock-blue);
   color: var(--alabaster);
-  margin-top: 0.5rem;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 8px;
   text-align: center;
-  width: 50%;
+  width: 20%;
+  margin-bottom: 0.5rem;
 }
 
 .shell:hover {
