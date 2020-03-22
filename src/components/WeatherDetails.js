@@ -1,7 +1,8 @@
 import React from 'react';
 import './WeatherDetails.css';
+import { v4 as uuidv4 } from 'uuid';
 
-function WeatherDetails({ weatherData }) {
+function WeatherDetails({ weatherData, addLocation }) {
   const today = new Date();
 
   const getDay = () => {
@@ -24,6 +25,14 @@ function WeatherDetails({ weatherData }) {
     }
   };
 
+  const addFavoriteLocation = name => {
+    const location = {
+      name: name,
+      id: uuidv4()
+    };
+    addLocation(location);
+  };
+
   return (
     <div id='details-container'>
       <div className='details-wrapper'>
@@ -43,8 +52,11 @@ function WeatherDetails({ weatherData }) {
               Coords: [{weatherData.lat}, {weatherData.lon}]
             </li>
           </ul>
-          <button className='add-button'>
-            <i className='fas fa-heart'></i>
+          <button
+            className='add-button'
+            onClick={() => addFavoriteLocation(weatherData.name)}
+          >
+            <i className='fas fa-star'></i>
           </button>
         </div>
         <div className='section-two'>

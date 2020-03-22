@@ -1,21 +1,20 @@
 import React from 'react';
 import './Favorites.css';
 
-const Favorites = () => {
+const Favorites = ({ storedLocations }) => {
+  const favoriteList = storedLocations.map(location => {
+    const { name, id } = location;
+    return (
+      <div className='shell' key={id}>
+        <li>{name}</li>
+      </div>
+    );
+  });
+
   return (
     <div id='favorites-container'>
       <div className='favorites-wrapper'>
-        <ul>
-          <div className='shell'>
-            <li>Stockholm</li>
-          </div>
-          <div className='shell'>
-            <li>London</li>
-          </div>
-          <div className='shell'>
-            <li>Barcelona</li>
-          </div>
-        </ul>
+        <ul>{favoriteList}</ul>
       </div>
     </div>
   );

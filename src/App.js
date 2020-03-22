@@ -64,6 +64,23 @@ function App() {
       .catch(err => console.log(err));
   }, [query]);
 
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem('locations'));
+    if (data !== null) {
+      setStoredLocations(data);
+    }
+
+    localStorage.setItem('locations', JSON.stringify(storedLocations));
+  }, [storedLocations]);
+
+  const addLocation = newLocation => {
+    if (storedLocations.some(location => location.name === newLocation.name)) {
+      return;
+    }
+
+    setStoredLocations([newLocation, ...storedLocations]);
+  };
+
   const handleSearch = value => {
     if (value !== null || value !== undefined) {
       setQuery(value);
@@ -75,7 +92,6 @@ function App() {
       <div id='container'>
         <Header />
         <Search handleSearch={handleSearch} />
-        <Favorites />
         {isError ? (
           <div id='error'>
             <Error />
@@ -88,7 +104,11 @@ function App() {
               </div>
             ) : (
               <>
-                <WeatherDetails weatherData={weatherData} />
+                <Favorites storedLocations={storedLocations} />
+                <WeatherDetails
+                  weatherData={weatherData}
+                  addLocation={addLocation}
+                />
                 <Forecast forecastData={forecastData} />
               </>
             )}
