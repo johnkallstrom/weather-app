@@ -16,7 +16,7 @@ function App() {
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.REACT_APP_API_KEY}&units=metric&q=`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?appid=698100b150d46e4c42f37781348a533f&units=metric&q=`;
 
     setIsError(false);
     setIsLoading(true);
@@ -54,7 +54,7 @@ function App() {
   }, [query]);
 
   useEffect(() => {
-    const url = `https://api.openweathermap.org/data/2.5/forecast?appid=${process.env.REACT_APP_API_KEY}&units=metric&q=`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?appid=698100b150d46e4c42f37781348a533f&units=metric&q=`;
 
     fetch(`${url}${query}`)
       .then(res => res.json())
