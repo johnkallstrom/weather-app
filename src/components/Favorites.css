@@ -9,26 +9,46 @@
   margin: 0 auto;
 }
 
-.favorites-wrapper {
-  width: 100%;
-  color: var(--havelock-blue);
-  margin-bottom: 1.5rem;
-}
-.favorites-wrapper ul {
+#favorites-container ul {
   list-style: none;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#favorites-container li:first-child {
+  margin-left: 0rem;
+}
+
+#favorites-container li {
+  margin-left: 0.5rem;
 }
 
 .shell {
+  display: inline;
   background-color: var(--havelock-blue);
   color: var(--alabaster);
-  padding: 0.5rem;
+  padding: 0.8rem;
   border-radius: 8px;
   text-align: center;
-  width: 20%;
-  margin-bottom: 0.5rem;
 }
 
 .shell:hover {
   cursor: pointer;
   background-color: var(--hover-color);
+}
+
+@media (max-width: 720px) {
+  #favorites-container li {
+    margin-left: 0rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .shell {
+    display: block;
+    background-color: var(--havelock-blue);
+    color: var(--alabaster);
+    padding: 0.8rem;
+    border-radius: 8px;
+    text-align: center;
+  }
 }
