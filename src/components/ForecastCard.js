@@ -5,7 +5,7 @@ function ForecastCard({ date, maxtemp, mintemp, icon }) {
     <div id='card-wrapper'>
       <p>{new Date(date).toLocaleDateString('en-GB', { weekday: 'short' })}</p>
       <img
-        src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
+        src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
         alt='forecast'
         id='forecast-img'
       />
