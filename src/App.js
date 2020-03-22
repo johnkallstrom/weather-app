@@ -91,6 +91,10 @@ function App() {
     }
   };
 
+  const clearStoredLocations = () => {
+    setStoredLocations([]);
+  };
+
   return (
     <div id='app'>
       <div id='container'>
@@ -117,6 +121,17 @@ function App() {
                   addLocation={addLocation}
                 />
                 <Forecast forecastData={forecastData} />
+                {storedLocations.length ? (
+                  <div id='clear'>
+                    <p>
+                      Click{' '}
+                      <span onClick={() => clearStoredLocations()}>here</span>{' '}
+                      to empty favorites list.
+                    </p>
+                  </div>
+                ) : (
+                  <div></div>
+                )}
               </>
             )}
           </>

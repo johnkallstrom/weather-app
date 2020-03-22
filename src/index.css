@@ -2,7 +2,6 @@
   --havelock-blue: #13a8ff;
   --alabaster: #fbfbfb;
   --crimson: #dd2742;
-  --candlelight: #fdd21b;
 }
 
 * {
@@ -38,7 +37,7 @@ body {
   margin-top: 3rem;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding-bottom: 3rem;
+  padding-bottom: 1.5rem;
   margin-bottom: 3rem;
 }
 
@@ -67,6 +66,23 @@ body {
   font-size: 75px;
   filter: invert(14%) sepia(58%) saturate(6005%) hue-rotate(343deg)
     brightness(108%) contrast(80%);
+}
+
+#clear {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#clear p {
+  color: var(--havelock-blue);
+}
+
+#clear span {
+  text-decoration: underline;
+}
+
+#clear span:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 992px) {
