@@ -108,7 +108,10 @@ function App() {
               </div>
             ) : (
               <>
-                <Favorites storedLocations={storedLocations} />
+                <Favorites
+                  storedLocations={storedLocations}
+                  handleSearch={handleSearch}
+                />
                 <WeatherDetails
                   weatherData={weatherData}
                   addLocation={addLocation}

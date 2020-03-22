@@ -1,12 +1,12 @@
 import React from 'react';
 import './Favorites.css';
 
-const Favorites = ({ storedLocations }) => {
+const Favorites = ({ storedLocations, handleSearch }) => {
   const favoriteList = storedLocations.map(location => {
     const { name, id } = location;
     return (
       <div className='shell' key={id}>
-        <li>{name}</li>
+        <li onClick={() => handleSearch(name)}>{name}</li>
       </div>
     );
   });
