@@ -62,7 +62,7 @@ function WeatherDetails({ weatherData, addLocation }) {
         <div className='section-two'>
           <p className='temp'>{Math.round(weatherData.temp)} &deg;C</p>
           <img
-            src={`http://openweathermap.org/img/wn/${weatherData.icon}@2x.png`}
+            src={`https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`}
             alt='weather'
             id='img'
           />
