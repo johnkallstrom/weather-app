@@ -28,7 +28,7 @@
   display: inline;
   background-color: var(--havelock-blue);
   color: var(--alabaster);
-  padding: 0.8rem;
+  padding: 0.7rem;
   border-radius: 8px;
   text-align: center;
 }
@@ -39,6 +39,12 @@
 }
 
 @media (max-width: 720px) {
+  #favorites-container ul {
+    list-style: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
   #favorites-container li {
     margin-left: 0rem;
     margin-bottom: 0.5rem;
@@ -46,9 +52,10 @@
 
   .shell {
     display: block;
+    width: 35%;
     background-color: var(--havelock-blue);
     color: var(--alabaster);
-    padding: 0.8rem;
+    padding: 0.7rem;
     border-radius: 8px;
     text-align: center;
   }
