@@ -69,8 +69,12 @@ function App() {
     if (data !== null) {
       setStoredLocations(data);
     }
+  }, []);
 
-    localStorage.setItem('locations', JSON.stringify(storedLocations));
+  useEffect(() => {
+    if (storedLocations !== null) {
+      localStorage.setItem('locations', JSON.stringify(storedLocations));
+    }
   }, [storedLocations]);
 
   const addLocation = newLocation => {
